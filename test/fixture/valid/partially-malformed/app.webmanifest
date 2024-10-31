@@ -1,0 +1,69 @@
+{
+  "background_color": "#D5415C",
+  "description": "A build system for web application icon and image assets",
+  "display": "standalone",
+  "icons": [
+    {
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "sizes": "512x512",
+      "src": "icon-masked-512x512.png",
+      "type": "image/png"
+    },
+    {
+      "sizes": "192x192",
+      "src": "icon-masked-192x192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon-maskable-512x512.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "icon-maskable-192x192.png",
+      "type": "image/png"
+    }
+  ],
+  "icons_localized": null,
+  "lang": "en-US",
+  "name": "Iconduit",
+  "related_applications": [
+    {
+      "id": "915056765",
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/app/id915056765"
+    },
+    {
+      "id": "com.google.android.apps.maps",
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.google.android.apps.maps"
+    },
+    {
+      "id": "9wzdncrdtbvb",
+      "platform": "windows",
+      "url": "https://microsoft.com/p/app/9wzdncrdtbvb"
+    }
+  ],
+  "screenshots": {
+    "form_factor": "narrow",
+    "label": "Original",
+    "platform": "ios",
+    "sizes": "552x696",
+    "src": "screenshot-a.png",
+    "type": "image/png"
+  },
+  "short_name": "Iconduit",
+  "start_url": ".",
+  "theme_color": "#D5415C"
+}
