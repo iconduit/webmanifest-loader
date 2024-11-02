@@ -23,14 +23,22 @@
     "access": "public"
   },
   "type": "module",
+  "types": "artifacts/dist/esm/index.d.ts",
   "main": "artifacts/dist/esm/index.js",
-  "types": "artifacts/dist/types/index.d.ts",
   "exports": {
     ".": {
-      "types": "./artifacts/dist/types/index.d.ts",
-      "import": "./artifacts/dist/esm/index.js",
-      "require": "./artifacts/dist/cjs/index.js",
-      "default": "./artifacts/dist/esm/index.js"
+      "import": {
+        "types": "./artifacts/dist/esm/index.d.ts",
+        "default": "./artifacts/dist/esm/index.js"
+      },
+      "require": {
+        "types": "./artifacts/dist/cjs/index.d.ts",
+        "default": "./artifacts/dist/cjs/index.js"
+      },
+      "default": {
+        "types": "./artifacts/dist/esm/index.d.ts",
+        "default": "./artifacts/dist/esm/index.js"
+      }
     }
   },
   "sideEffects": false,
@@ -47,7 +55,9 @@
     "loader-utils": "^3.3.1"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "^0.16.4",
     "@eslint/js": "^9.13.0",
+    "@skypack/package-check": "^0.2.2",
     "@types/eslint__js": "^8.42.3",
     "@types/loader-utils": "^2.0.6",
     "@types/node": "^22.8.5",
@@ -63,6 +73,7 @@
     "html-bundler-webpack-plugin": "^4.1.4",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.1.0",
+    "publint": "^0.2.12",
     "typescript": "^5.6.3",
     "typescript-eslint": "^8.12.2",
     "vitest": "^2.1.4",
