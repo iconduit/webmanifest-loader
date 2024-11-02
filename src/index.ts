@@ -9,8 +9,10 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
 
   const tasks: Promise<void>[] = [];
 
-  const loadImage = async (image: Image): Promise<void> => {
-    image.src = await this.importModule(resolve(this.context, image.src));
+  const loadSrc = async (obj: unknown): Promise<void> => {
+    if (!hasProperty(obj, "src") || typeof obj.src !== "string") return;
+
+    obj.src = await this.importModule(resolve(this.context, obj.src));
   };
 
   const loadImages = (images: unknown): void => {
@@ -18,7 +20,7 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
 
     for (let i = 0; i < images.length; ++i) {
       const image = images[i];
-      if (isImage(image)) tasks.push(loadImage(image));
+      tasks.push(loadSrc(image));
     }
   };
 
@@ -28,13 +30,13 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
     for (const images of Object.values(localized)) loadImages(images);
   };
 
-  if ("icons" in manifest) {
+  if (hasProperty(manifest, "icons")) {
     loadImages(manifest.icons);
   }
-  if ("icons_localized" in manifest) {
+  if (hasProperty(manifest, "icons_localized")) {
     loadLocalizedImages(manifest.icons_localized);
   }
-  if ("screenshots" in manifest) {
+  if (hasProperty(manifest, "screenshots")) {
     loadImages(manifest.screenshots);
   }
 
@@ -47,13 +49,9 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
 
 export default webManifestLoader;
 
-type Image = { src: string };
-
-function isImage(image: unknown): image is Image {
-  return (
-    typeof image === "object" &&
-    image != null &&
-    "src" in image &&
-    typeof image.src === "string"
-  );
+function hasProperty<T extends string>(
+  obj: unknown,
+  tag: T,
+): obj is { [K in T]: unknown } {
+  return typeof obj === "object" && obj != null && tag in obj;
 }
