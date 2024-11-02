@@ -10,11 +10,7 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
   const tasks: Promise<void>[] = [];
 
   const loadImage = async (image: Image): Promise<void> => {
-    try {
-      image.src = await this.importModule(resolve(this.context, image.src));
-    } catch {
-      // error handled by webpack
-    }
+    image.src = await this.importModule(resolve(this.context, image.src));
   };
 
   const loadImages = (images: unknown): void => {
