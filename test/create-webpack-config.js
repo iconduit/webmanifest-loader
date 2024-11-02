@@ -12,7 +12,7 @@ export function createWebpackConfig(fixture) {
     context: resolve(import.meta.dirname, "fixture", fixture),
     entry: "./index.html",
     output: {
-      path: resolve(import.meta.dirname, "../artifacts/integration"),
+      path: resolve(import.meta.dirname, "../artifacts/test/output", fixture),
       filename: "bundle.js",
       publicPath: "/path/to/public/",
       assetModuleFilename: "[name].public[ext][query]",
