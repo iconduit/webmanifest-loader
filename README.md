@@ -1,4 +1,4 @@
-# Iconduit web app manifest loader
+# Web app manifest loader
 
 _A Webpack loader for `.webmanifest` files_
 
