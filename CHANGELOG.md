@@ -10,4 +10,6 @@ Versioning].
 
 ## Unreleased
 
+### Added
+
 - Initial release.
