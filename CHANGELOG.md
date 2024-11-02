@@ -10,6 +10,10 @@ Versioning].
 
 ## Unreleased
 
+## [v0.1.0] - 2024-11-02
+
+[v0.1.0]: https://github.com/iconduit/webmanifest-loader/releases/tag/v0.1.0
+
 ### Added
 
 - Initial release.
