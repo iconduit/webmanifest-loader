@@ -25,10 +25,12 @@ and resolving their URLs in the output manifest file.
 It supports:
 
 - Resolving [icons]
+- Resolving [shortcut icons]
 - Resolving [screenshots]
 
-[icons]: https://www.w3.org/TR/appmanifest/#icons-member
-[screenshots]: https://www.w3.org/TR/manifest-app-info/#screenshots-member
+[icons]: https://w3.org/TR/appmanifest/#icons-member
+[shortcut icons]: https://w3.org/TR/appmanifest/#icons-member-0
+[screenshots]: https://w3.org/TR/manifest-app-info/#screenshots-member
 
 ## Usage
 

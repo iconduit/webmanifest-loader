@@ -57,31 +57,9 @@ it("outputs comprehensive web app manifests", async () => {
           "type": "image/png",
         },
         {
-          "sizes": "512x512",
-          "src": "/path/to/public/icon-masked-512x512.public.png",
-          "type": "image/png",
-        },
-        {
-          "sizes": "192x192",
-          "src": "/path/to/public/icon-masked-192x192.public.png",
-          "type": "image/png",
-        },
-        {
           "purpose": "maskable",
           "sizes": "1024x1024",
           "src": "/path/to/public/icon-maskable-1024x1024.public.png",
-          "type": "image/png",
-        },
-        {
-          "purpose": "maskable",
-          "sizes": "512x512",
-          "src": "/path/to/public/icon-maskable-512x512.public.png",
-          "type": "image/png",
-        },
-        {
-          "purpose": "maskable",
-          "sizes": "192x192",
-          "src": "/path/to/public/icon-maskable-192x192.public.png",
           "type": "image/png",
         },
       ],
@@ -93,31 +71,9 @@ it("outputs comprehensive web app manifests", async () => {
             "type": "image/png",
           },
           {
-            "sizes": "512x512",
-            "src": "/path/to/public/icon-masked-512x512.public.png",
-            "type": "image/png",
-          },
-          {
-            "sizes": "192x192",
-            "src": "/path/to/public/icon-masked-192x192.public.png",
-            "type": "image/png",
-          },
-          {
             "purpose": "maskable",
             "sizes": "1024x1024",
             "src": "/path/to/public/icon-maskable-1024x1024.public.png",
-            "type": "image/png",
-          },
-          {
-            "purpose": "maskable",
-            "sizes": "512x512",
-            "src": "/path/to/public/icon-maskable-512x512.public.png",
-            "type": "image/png",
-          },
-          {
-            "purpose": "maskable",
-            "sizes": "192x192",
-            "src": "/path/to/public/icon-maskable-192x192.public.png",
             "type": "image/png",
           },
         ],
@@ -168,6 +124,76 @@ it("outputs comprehensive web app manifests", async () => {
         },
       ],
       "short_name": "Iconduit",
+      "shortcuts": [
+        {
+          "description": "Create a new icon",
+          "icons": [
+            {
+              "sizes": "1024x1024",
+              "src": "/path/to/public/icon-masked-1024x1024.public.png",
+              "type": "image/png",
+            },
+            {
+              "purpose": "maskable",
+              "sizes": "1024x1024",
+              "src": "/path/to/public/icon-maskable-1024x1024.public.png",
+              "type": "image/png",
+            },
+          ],
+          "icons_localized": {
+            "en-AU": [
+              {
+                "sizes": "1024x1024",
+                "src": "/path/to/public/icon-masked-1024x1024.public.png",
+                "type": "image/png",
+              },
+              {
+                "purpose": "maskable",
+                "sizes": "1024x1024",
+                "src": "/path/to/public/icon-maskable-1024x1024.public.png",
+                "type": "image/png",
+              },
+            ],
+          },
+          "name": "New icon",
+          "short_name": "New",
+          "url": "/new",
+        },
+        {
+          "description": "Edit an existing icon",
+          "icons": [
+            {
+              "sizes": "1024x1024",
+              "src": "/path/to/public/icon-masked-1024x1024.public.png",
+              "type": "image/png",
+            },
+            {
+              "purpose": "maskable",
+              "sizes": "1024x1024",
+              "src": "/path/to/public/icon-maskable-1024x1024.public.png",
+              "type": "image/png",
+            },
+          ],
+          "icons_localized": {
+            "en-AU": [
+              {
+                "sizes": "1024x1024",
+                "src": "/path/to/public/icon-masked-1024x1024.public.png",
+                "type": "image/png",
+              },
+              {
+                "purpose": "maskable",
+                "sizes": "1024x1024",
+                "src": "/path/to/public/icon-maskable-1024x1024.public.png",
+                "type": "image/png",
+              },
+            ],
+          },
+          "name": "Edit icon",
+          "short_name": "Edit",
+          "url": "/edit",
+        },
+      ],
       "start_url": ".",
       "theme_color": "#D5415C",
     }

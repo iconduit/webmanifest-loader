@@ -36,6 +36,16 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
   if (hasProperty(manifest, "icons_localized")) {
     loadLocalizedImages(manifest.icons_localized);
   }
+  if (hasProperty(manifest, "shortcuts") && Array.isArray(manifest.shortcuts)) {
+    for (const shortcut of manifest.shortcuts) {
+      if (hasProperty(shortcut, "icons")) {
+        loadImages(shortcut.icons);
+      }
+      if (hasProperty(shortcut, "icons_localized")) {
+        loadLocalizedImages(shortcut.icons_localized);
+      }
+    }
+  }
   if (hasProperty(manifest, "screenshots")) {
     loadImages(manifest.screenshots);
   }
