@@ -2,6 +2,21 @@
 
 _A Webpack loader for `.webmanifest` files_
 
+[![Current NPM version][badge-npm-version-image]][badge-npm-version-link]
+[![Build status][badge-build-image]][badge-build-link]
+[![Test coverage][badge-coverage-image]][badge-coverage-link]
+
+[badge-build-image]:
+  https://img.shields.io/github/actions/workflow/status/iconduit/webmanifest-loader/ci-library.yml?branch=main&style=for-the-badge
+[badge-build-link]:
+  https://github.com/iconduit/webmanifest-loader/actions/workflows/ci-library.yml
+[badge-coverage-image]:
+  https://img.shields.io/codecov/c/gh/iconduit/webmanifest-loader?style=for-the-badge
+[badge-coverage-link]: https://codecov.io/gh/iconduit/webmanifest-loader
+[badge-npm-version-image]:
+  https://img.shields.io/npm/v/nvector-geodesy?label=nvector-geodesy&logo=npm&style=for-the-badge
+[badge-npm-version-link]: https://npmjs.com/package/nvector-geodesy
+
 This loader processes [web app manifest] files, adding any images to the bundle
 and resolving their URLs in the output manifest file.
 
