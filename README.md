@@ -24,8 +24,11 @@ and resolving their URLs in the output manifest file.
 
 It supports:
 
-- Resolving icons (`icons` and `icons_localized` fields)
-- Resolving screenshots (`screenshots` field)
+- Resolving [icons]
+- Resolving [screenshots]
+
+[icons]: https://www.w3.org/TR/appmanifest/#icons-member
+[screenshots]: https://www.w3.org/TR/manifest-app-info/#screenshots-member
 
 ## Usage
 
