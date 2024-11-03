@@ -10,6 +10,18 @@ Versioning].
 
 ## Unreleased
 
+## [v0.3.0] - 2024-11-03
+
+[v0.3.0]: https://github.com/iconduit/webmanifest-loader/releases/tag/v0.3.0
+
+### Changed
+
+- **\[BREAKING\]** This package is now CommonJS only.
+
+### Fixed
+
+- This loader now works with Webpack `5.96.0` and later.
+
 ## [v0.2.0] - 2024-11-02
 
 [v0.2.0]: https://github.com/iconduit/webmanifest-loader/releases/tag/v0.2.0
