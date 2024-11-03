@@ -1,6 +1,6 @@
 import { defineConfig } from "vitest/config";
 
-module.exports = defineConfig({
+export default defineConfig({
   test: {
     watch: false,
     include: ["test/suite/**/*.spec.ts"],
