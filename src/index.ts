@@ -2,6 +2,8 @@ import { resolve } from "path";
 import { callbackify } from "util";
 import type { LoaderDefinitionFunction } from "webpack";
 
+const subLoaderPath = require.resolve("./sub-loader.js");
+
 const webManifestLoader: LoaderDefinitionFunction = function (source) {
   const manifest = JSON.parse(source) as unknown;
 
@@ -12,7 +14,9 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
   const loadSrc = async (obj: unknown): Promise<void> => {
     if (!hasProperty(obj, "src") || typeof obj.src !== "string") return;
 
-    obj.src = await this.importModule(resolve(this.context, obj.src));
+    obj.src = await this.importModule(
+      `!!${subLoaderPath}!${resolve(this.context, obj.src)}`,
+    );
   };
 
   const loadImages = (images: unknown): void => {
