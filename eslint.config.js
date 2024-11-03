@@ -10,7 +10,6 @@ module.exports = ts.config(
     ignores: [".makefiles", "artifacts", "test/fixture"],
   },
   js.configs.recommended,
-
   ...ts.configs.recommended,
   node.configs["flat/recommended-module"],
   import_.flatConfigs.recommended,
