@@ -1,18 +1,22 @@
-import HtmlBundlerPlugin from "html-bundler-webpack-plugin";
-import { resolve } from "path";
+const HtmlBundlerPlugin = require("html-bundler-webpack-plugin");
+const { resolve } = require("path");
+
+module.exports = {
+  createWebpackConfig,
+};
 
 /**
  * @param {string} fixture
  * @returns {import('webpack').Configuration}
  */
-export function createWebpackConfig(fixture) {
+function createWebpackConfig(fixture) {
   return {
     mode: "production",
     devtool: "source-map",
-    context: resolve(import.meta.dirname, "fixture", fixture),
+    context: resolve(__dirname, "fixture", fixture),
     entry: "./index.html",
     output: {
-      path: resolve(import.meta.dirname, "../artifacts/test/output", fixture),
+      path: resolve(__dirname, "../artifacts/test/output", fixture),
       filename: "bundle.js",
       publicPath: "/path/to/public/",
       assetModuleFilename: "[name].public[ext][query]",
@@ -33,7 +37,7 @@ export function createWebpackConfig(fixture) {
         {
           test: /\.webmanifest$/,
           type: "asset/resource",
-          use: resolve(import.meta.dirname, "../artifacts/dist/esm/index.js"),
+          use: resolve(__dirname, "../artifacts/dist/index.js"),
         },
       ],
     },

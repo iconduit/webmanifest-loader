@@ -4,7 +4,7 @@ import { beforeAll, expect, it } from "vitest";
 import type { Stats } from "webpack";
 import compiler from "../compiler.js";
 
-const outputPath = resolve(import.meta.dirname, "../../artifacts/test/output");
+const outputPath = resolve(__dirname, "../../artifacts/test/output");
 
 beforeAll(async () => {
   try {

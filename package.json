@@ -22,23 +22,13 @@
   "publishConfig": {
     "access": "public"
   },
-  "type": "module",
-  "types": "artifacts/dist/esm/index.d.ts",
-  "main": "artifacts/dist/esm/index.js",
+  "type": "commonjs",
+  "types": "artifacts/dist/index.d.ts",
+  "main": "artifacts/dist/index.js",
   "exports": {
     ".": {
-      "import": {
-        "types": "./artifacts/dist/esm/index.d.ts",
-        "default": "./artifacts/dist/esm/index.js"
-      },
-      "require": {
-        "types": "./artifacts/dist/cjs/index.d.ts",
-        "default": "./artifacts/dist/cjs/index.js"
-      },
-      "default": {
-        "types": "./artifacts/dist/esm/index.d.ts",
-        "default": "./artifacts/dist/esm/index.js"
-      }
+      "types": "./artifacts/dist/index.d.ts",
+      "default": "./artifacts/dist/index.js"
     }
   },
   "sideEffects": false,
@@ -57,7 +47,6 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.16.4",
     "@eslint/js": "^9.13.0",
-    "@skypack/package-check": "^0.2.2",
     "@types/eslint__js": "^8.42.3",
     "@types/loader-utils": "^2.0.6",
     "@types/node": "^22.8.5",

@@ -1,11 +1,11 @@
 import { defineConfig } from "vitest/config";
 
-export default defineConfig({
+module.exports = defineConfig({
   test: {
     watch: false,
     include: ["test/suite/**/*.spec.ts"],
     coverage: {
-      include: ["artifacts/dist/esm/**/*.js"],
+      include: ["artifacts/dist/**/*.js"],
     },
   },
 });

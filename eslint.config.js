@@ -1,16 +1,16 @@
-import js from "@eslint/js";
-import import_ from "eslint-plugin-import";
-import node from "eslint-plugin-n";
-import promise from "eslint-plugin-promise";
-import globals from "globals";
-import ts from "typescript-eslint";
+const js = require("@eslint/js");
+const import_ = require("eslint-plugin-import");
+const node = require("eslint-plugin-n");
+const promise = require("eslint-plugin-promise");
+const globals = require("globals");
+const ts = require("typescript-eslint");
 
-export default ts.config(
+module.exports = ts.config(
   {
     ignores: [".makefiles", "artifacts", "test/fixture"],
   },
   js.configs.recommended,
-  // eslint-disable-next-line import/no-named-as-default-member
+
   ...ts.configs.recommended,
   node.configs["flat/recommended-module"],
   import_.flatConfigs.recommended,
@@ -45,6 +45,12 @@ export default ts.config(
       "n/no-unsupported-features/es-builtins": "off",
       "n/no-unsupported-features/es-syntax": "off",
       "n/no-unsupported-features/node-builtins": "off",
+    },
+  },
+  {
+    files: ["**/*.js"],
+    rules: {
+      "@typescript-eslint/no-require-imports": "off",
     },
   },
 );

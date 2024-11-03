@@ -1,7 +1,6 @@
 CHANGELOG_TAG_URL_PREFIX := https://github.com/iconduit/webmanifest-loader/releases/tag/
 JS_ARETHETYPESWRONG_REQ += artifacts/dist
 JS_PUBLINT_REQ += artifacts/dist
-JS_SKYPACK_PACKAGE_CHECK_REQ += artifacts/dist
 JS_VITEST_REQ := artifacts/dist
 
 -include .makefiles/Makefile
@@ -9,7 +8,6 @@ JS_VITEST_REQ := artifacts/dist
 -include .makefiles/pkg/js/v1/with-npm.mk
 -include .makefiles/pkg/js/v1/with-arethetypeswrong.mk
 -include .makefiles/pkg/js/v1/with-publint.mk
--include .makefiles/pkg/js/v1/with-skypack-package-check.mk
 -include .makefiles/pkg/js/v1/with-tsc.mk
 -include .makefiles/pkg/changelog/v1/Makefile
 
@@ -48,17 +46,7 @@ run-fixture-invalid-%: artifacts/link-dependencies.touch artifacts/dist
 
 ################################################################################
 
-artifacts/dist: artifacts/dist/cjs artifacts/dist/esm
-	@touch "$@"
-
-artifacts/dist/cjs: tsconfig.build.cjs.json tsconfig.json artifacts/link-dependencies.touch $(JS_SOURCE_FILES)
+artifacts/dist: tsconfig.build.json tsconfig.json artifacts/link-dependencies.touch $(JS_SOURCE_FILES)
 	@rm -rf "$@"
 	$(JS_EXEC) tsc -p "$<"
-	echo '{"type":"commonjs"}' > "$@/package.json"
-	@touch "$@"
-
-artifacts/dist/esm: tsconfig.build.esm.json tsconfig.json artifacts/link-dependencies.touch $(JS_SOURCE_FILES)
-	@rm -rf "$@"
-	$(JS_EXEC) tsc -p "$<"
-	echo '{"type":"module"}' > "$@/package.json"
 	@touch "$@"

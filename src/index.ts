@@ -57,7 +57,7 @@ const webManifestLoader: LoaderDefinitionFunction = function (source) {
   })(this.async());
 };
 
-export default webManifestLoader;
+module.exports = webManifestLoader;
 
 function hasProperty<T extends string>(
   obj: unknown,
