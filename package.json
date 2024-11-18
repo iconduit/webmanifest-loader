@@ -45,7 +45,7 @@
     "loader-utils": "^3.3.1"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.16.4",
+    "@arethetypeswrong/cli": "^0.17.0",
     "@eslint/js": "^9.13.0",
     "@types/eslint__js": "^8.42.3",
     "@types/loader-utils": "^2.0.6",
