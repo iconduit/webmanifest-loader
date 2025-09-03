@@ -2,9 +2,15 @@ import webpack, { type Stats } from "webpack";
 import { createWebpackConfig } from "./create-webpack-config.js";
 
 export default (fixture: string): Promise<Stats> => {
-  const compiler = webpack(createWebpackConfig(fixture));
-
   return new Promise((resolve, reject) => {
+    const compiler = webpack(createWebpackConfig(fixture));
+
+    if (!compiler) {
+      reject(new Error("Missing compiler"));
+
+      return;
+    }
+
     compiler.run((err, stats) => {
       if (err) {
         reject(err);
