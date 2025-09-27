@@ -1,0 +1,11 @@
+name: Create a failed workflow run
+
+on:
+  push:
+
+jobs:
+  fail:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail the job
+        run: "false"
