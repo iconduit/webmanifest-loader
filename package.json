@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.0",
-    "@eslint/js": "^9.13.0",
+    "@eslint/js": "^10.0.0",
     "@types/loader-utils": "^3.0.0",
     "@types/node": "^24.0.0",
     "@vitest/coverage-v8": "^4.0.0",
