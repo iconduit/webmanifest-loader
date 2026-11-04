@@ -1,6 +1,4 @@
 CHANGELOG_TAG_URL_PREFIX := https://github.com/iconduit/webmanifest-loader/releases/tag/
-JS_ARETHETYPESWRONG_REQ += artifacts/dist
-JS_PUBLINT_REQ += artifacts/dist
 JS_VITEST_REQ := artifacts/dist
 
 -include .makefiles/Makefile
@@ -43,10 +41,3 @@ run-fixture-valid-%: artifacts/link-dependencies.touch artifacts/dist
 .PHONY: run-fixture-invalid-%
 run-fixture-invalid-%: artifacts/link-dependencies.touch artifacts/dist
 	if FIXTURE="invalid/$*" $(JS_EXEC) webpack --config test/webpack.config.js; then exit 1; else exit 0; fi
-
-################################################################################
-
-artifacts/dist: tsconfig.build.json tsconfig.json artifacts/link-dependencies.touch $(JS_SOURCE_FILES)
-	@rm -rf "$@"
-	$(JS_EXEC) tsc -p "$<"
-	@touch "$@"
